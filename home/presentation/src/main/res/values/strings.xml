@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="your_available_balance">Your available balance</string>
+    <string name="hello">Hello, %1$s</string>
+    <string name="transfer">Transfer</string>
+    <string name="top_up">Top Up</string>
+    <string name="history">History</string>
+    <string name="payment_list">Payment List</string>
+    <string name="electricity">Electricity</string>
+    <string name="internet">Internet</string>
+    <string name="voucher">Voucher</string>
+    <string name="assurance">Assurance</string>
+    <string name="merchant">Merchant</string>
+    <string name="mobile_credit">Mobile Credit</string>
+    <string name="bill">Bill</string>
+    <string name="more">More</string>
+    <string name="promo_one">Promo One</string>
+    <string name="promo_two">Promo two</string>
+    <string name="promo_three">Promo three</string>
+    <string name="promo_and_discount">Promo And Discount</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="statistic">Statistic</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="coming_soon">Coming Soon!</string>
+    <string name="app_exception">App Exception</string>
+    <string name="failed_to_fetch_available_balance">Failed to Fetch Available Balance</string>
+    <string name="finance">Finance</string>
+    <string name="accept">Accept</string>
+</resources>
