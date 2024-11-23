@@ -1,101 +1,33 @@
+import vn.finance.buildSrc.Configs
+
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
-    alias(libs.plugins.androidHilt)
-    `maven-publish`
+    vn.core.plugins.androidLibrary
+    vn.core.plugins.androidCompose
+    vn.core.plugins.androidPublishing
 }
 
 android {
-    namespace = Configs.namespace
-    compileSdk = Configs.compileSdk
-
-    defaultConfig {
-        minSdk = Configs.minSdk
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = Configs.javaVersion
-        targetCompatibility = Configs.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = Configs.jvmTarget
-    }
-    buildFeatures {
-        compose = true
-        buildConfig = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Configs.kotlinCompilerExtensionVersion
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-    publishing {
-        multipleVariants("all") {
-            allVariants()
-            withSourcesJar()
-        }
-    }
+    namespace = Configs.Home.PRESENTATION_NAMESPACE
 }
 
 publishing {
-    val ghUsername = System.getenv("GH_USERNAME")
-    val ghPassword = System.getenv("GH_TOKEN")
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("${Configs.mavenDomain}/${ghUsername}/finance-home")
-            credentials {
-                username = ghUsername
-                password = ghPassword
-            }
-        }
-    }
     publications {
-        create<MavenPublication>("mavenAndroid") {
+        create<MavenPublication>(Configs.Artifact.ARTIFACT_PRESENTATION_ID) {
             afterEvaluate {
                 from(components["all"])
             }
-            groupId = Configs.Artifact.groupId
-            artifactId = Configs.Artifact.artifactId
-            version = Configs.Artifact.version
+            groupId = Configs.Artifact.GROUP_ID
+            artifactId = Configs.Artifact.ARTIFACT_PRESENTATION_ID
+            version = Configs.Artifact.VERSION
         }
     }
 }
 
 dependencies {
-    implementation(fnlibs.financeTheme)
-    implementation(fnlibs.financeNavigation)
-
-    implementation(project(Configs.BuildModule.homeBusiness))
-    implementation(libs.coreLibxDomain)
-    implementation(libs.coreLibxUiComposex)
-    implementation(libs.bundles.coreAndroidComponents)
-    implementation(platform(libs.androidxComposeBom))
-    implementation(libs.bundles.jetpackComposeComponents)
-    implementation(libs.androidxHilt)
-    kapt(libs.androidxHiltCompiler)
-
-    testImplementation(libs.bundles.testComponents)
-    testImplementation(libs.bundles.composeTestComponents)
-    androidTestImplementation(libs.bundles.androidTestComponents)
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
+    implementation(project(Configs.BuildModule.HOME_BUSINESS))
+    implementation(libs.coreDomain)
+    implementation(libs.coreData)
+    implementation(libs.coreCompose)
+    implementation(libs.financeTheme)
+    implementation(libs.financeNavigation)
 }

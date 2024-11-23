@@ -13,7 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import vn.finance.home.R
+import vn.finance.home.presentation.R
 
 @Composable
 fun PromoAndDiscountComponent() {

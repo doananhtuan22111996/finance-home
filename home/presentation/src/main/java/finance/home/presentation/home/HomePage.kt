@@ -34,7 +34,7 @@ import finance.home.presentation.home.dashboard.DashboardView
 import vn.core.composex.uikit.AppBottomNavigationBar
 import vn.core.composex.uikit.Container
 import vn.core.composex.uikit.NavElement
-import vn.finance.home.R
+import vn.finance.home.presentation.R
 
 @Composable
 fun HomePage(onGotoSetting: () -> Unit) {

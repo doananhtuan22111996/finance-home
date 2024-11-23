@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import finance.home.presentation.formatToDollar
-import vn.finance.home.R
+import vn.finance.home.presentation.R
 
 @Composable
 fun YourAccountComponent(name: String, money: Number) {
