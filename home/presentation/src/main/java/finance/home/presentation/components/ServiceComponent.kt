@@ -23,7 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import vn.finance.home.R
+import vn.finance.home.presentation.R
 
 @Composable
 fun ServiceComponent() {

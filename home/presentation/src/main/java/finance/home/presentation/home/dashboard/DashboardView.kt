@@ -23,7 +23,7 @@ import finance.home.presentation.components.PaymentComponent
 import finance.home.presentation.components.PromoAndDiscountComponent
 import finance.home.presentation.components.ServiceComponent
 import finance.home.presentation.components.YourAccountComponent
-import vn.finance.home.R
+import vn.finance.home.presentation.R
 
 @Composable
 fun DashboardView() {

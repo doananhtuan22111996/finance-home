@@ -1,63 +1,21 @@
+import vn.finance.buildSrc.Configs
+
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
-    alias(libs.plugins.androidHilt)
+    vn.core.plugins.androidApplication
 }
 
 android {
-    namespace = Configs.Demo.namespace
-    compileSdk = Configs.compileSdk
-
+    namespace = Configs.Demo.NAMESPACE
     defaultConfig {
-        applicationId = Configs.Demo.applicationId
-        minSdk = Configs.minSdk
-        targetSdk = Configs.targetSdk
-        versionCode = Configs.Demo.versionCode
-        versionName = Configs.Demo.versionName
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = Configs.javaVersion
-        targetCompatibility = Configs.javaVersion
-    }
-    kotlinOptions {
-        jvmTarget = Configs.jvmTarget
-    }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Configs.kotlinCompilerExtensionVersion
+        applicationId = Configs.Demo.APPLICATION_ID
+        versionCode = Configs.Demo.VERSION_CODE
+        versionName = Configs.Demo.VERSION_NAME
     }
 }
 
 dependencies {
-    implementation(project(Configs.BuildModule.homePresentation))
-    implementation(project(Configs.BuildModule.homeBusiness))
-    implementation(libs.bundles.coreAndroidComponents)
-    implementation(platform(libs.androidxComposeBom))
-    implementation(libs.bundles.jetpackComposeComponents)
-    implementation(libs.androidxHilt)
-    kapt(libs.androidxHiltCompiler)
-    testImplementation(libs.bundles.testComponents)
-    testImplementation(libs.bundles.composeTestComponents)
-
-    implementation(fnlibs.financeTheme)
-    implementation(fnlibs.financeLaunch)
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
+    implementation(project(Configs.BuildModule.HOME_PRESENTATION))
+    implementation(project(Configs.BuildModule.HOME_BUSINESS))
+    implementation(libs.financeTheme)
+    implementation(libs.financeLaunch)
 }

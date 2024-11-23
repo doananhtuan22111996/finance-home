@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import vn.finance.home.R
 import vn.finance.home.business.Configs.EMPTY_STRING
+import vn.finance.home.presentation.R
 
 @Composable
 fun AlertExceptionDialogComponent(
