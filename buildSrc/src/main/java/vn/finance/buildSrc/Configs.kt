@@ -23,6 +23,6 @@ object Configs {
         const val GROUP_ID = "vn.finance.libs"
         const val ARTIFACT_PRESENTATION_ID = "feature-home-presentation"
         const val ARTIFACT_BUSINESS_ID = "feature-home-business"
-        const val VERSION = "1.0.1"
+        const val VERSION = "1.0.2"
     }
 }

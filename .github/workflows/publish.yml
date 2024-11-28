@@ -28,7 +28,7 @@ jobs:
         continue-on-error: true
 
       - name: Publish Artifact Business
-        run: ./gradlew :home:business:publishFeature-home-presentationPublicationToPackagesRepository
+        run: ./gradlew :home:business:publishFeature-home-businessPublicationToPackagesRepository
         continue-on-error: true
 
       - name: Sending report to Telegram
