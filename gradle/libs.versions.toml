@@ -5,8 +5,8 @@ coreData = "1.0.0"
 coreCompose = "1.0.0"
 
 financeTheme = "1.0.1"
-financeNavigation = "1.0.2"
 financeLaunch = "1.0.1"
+financeStatistic = "1.0.1"
 
 provideNetworking = "1.0.0"
 
@@ -19,6 +19,9 @@ coreCompose = { group = "vn.core.libs", name = "compose", version.ref = "coreCom
 provideNetworking = { group = "vn.core.provider", name = "finance-networking", version.ref = "provideNetworking" }
 financeTheme = { group = "vn.finance.libs", name = "theme", version.ref = "financeTheme" }
 financeLaunch = { group = "vn.finance.libs", name = "feature-launch", version.ref = "financeLaunch" }
-financeNavigation = { group = "vn.finance.libs", name = "navigation", version.ref = "financeNavigation" }
+
+financeStatisticPresentation = { group = "vn.finance.libs", name = "feature-statistic-presentation", version.ref = "financeStatistic" }
+financeStatisticBusiness = { group = "vn.finance.libs", name = "feature-statistic-business", version.ref = "financeStatistic" }
+financeStatisticApi = { group = "vn.finance.libs", name = "feature-statistic-api", version.ref = "financeStatistic" }
 
 [plugins]
