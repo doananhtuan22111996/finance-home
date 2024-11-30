@@ -25,9 +25,11 @@ publishing {
 
 dependencies {
     implementation(project(Configs.BuildModule.HOME_BUSINESS))
+    implementation(project(Configs.BuildModule.HOME_API))
+
     implementation(libs.coreDomain)
     implementation(libs.coreData)
     implementation(libs.coreCompose)
     implementation(libs.financeTheme)
-    implementation(libs.financeNavigation)
+    implementation(libs.financeStatisticApi)
 }

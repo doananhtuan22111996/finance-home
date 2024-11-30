@@ -37,7 +37,7 @@ import vn.core.composex.uikit.NavElement
 import vn.finance.home.presentation.R
 
 @Composable
-fun HomePage(onGotoSetting: () -> Unit) {
+fun HomePage(statisticPage: @Composable () -> Unit) {
     val viewModel: HomeViewModel = hiltViewModel()
     val selected by viewModel.selected.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -126,7 +126,10 @@ fun HomePage(onGotoSetting: () -> Unit) {
             AnimatedVisibility(visible = selected == 0) {
                 DashboardView()
             }
-            AnimatedVisibility(visible = selected != 0) {
+            AnimatedVisibility(visible = selected == 1) {
+                statisticPage()
+            }
+            AnimatedVisibility(visible = selected != 0 && selected != 1) {
                 Box(modifier = Modifier.fillMaxSize())
             }
         }
