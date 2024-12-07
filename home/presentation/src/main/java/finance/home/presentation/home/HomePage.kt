@@ -31,9 +31,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import finance.home.presentation.home.dashboard.DashboardView
-import vn.core.composex.uikit.AppBottomNavigationBar
 import vn.core.composex.uikit.Container
-import vn.core.composex.uikit.NavElement
+import vn.core.composex.uikit.appBar.AppBottomNavigationBar
+import vn.core.composex.uikit.appBar.NavElement
 import vn.finance.home.presentation.R
 
 @Composable
