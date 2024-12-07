@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import finance.home.presentation.api.HomeApiImpl
 import vn.finance.home.api.HomeApi
+import vn.finance.profile.api.ProfileApi
 import vn.finance.statistic.api.StatisticApi
 import javax.inject.Singleton
 
@@ -15,6 +16,6 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideHomeApi(statisticApi: StatisticApi): HomeApi =
-        HomeApiImpl(statisticApi = statisticApi)
+    fun provideHomeApi(statisticApi: StatisticApi, profileApi: ProfileApi): HomeApi =
+        HomeApiImpl(statisticApi = statisticApi, profileApi = profileApi)
 }

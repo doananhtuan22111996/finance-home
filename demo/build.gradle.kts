@@ -16,11 +16,14 @@ android {
 dependencies {
     implementation(project(Configs.BuildModule.HOME_PRESENTATION))
     implementation(project(Configs.BuildModule.HOME_BUSINESS))
+    implementation(project(Configs.BuildModule.HOME_API))
 
     implementation(libs.financeTheme)
     implementation(libs.financeLaunch)
 
     implementation(libs.financeStatisticPresentation)
     implementation(libs.financeStatisticBusiness)
-    implementation(libs.financeStatisticApi)
+
+    implementation(libs.financeProfilePresentation)
+    implementation(libs.financeProfileBusiness)
 }

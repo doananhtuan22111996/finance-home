@@ -37,7 +37,7 @@ import vn.core.composex.uikit.appBar.NavElement
 import vn.finance.home.presentation.R
 
 @Composable
-fun HomePage(statisticPage: @Composable () -> Unit) {
+fun HomePage(statisticPage: @Composable () -> Unit, profilePage: @Composable () -> Unit) {
     val viewModel: HomeViewModel = hiltViewModel()
     val selected by viewModel.selected.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -129,8 +129,11 @@ fun HomePage(statisticPage: @Composable () -> Unit) {
             AnimatedVisibility(visible = selected == 1) {
                 statisticPage()
             }
-            AnimatedVisibility(visible = selected != 0 && selected != 1) {
+            AnimatedVisibility(visible = selected == 2) {
                 Box(modifier = Modifier.fillMaxSize())
+            }
+            AnimatedVisibility(visible = selected == 3) {
+                profilePage()
             }
         }
     }

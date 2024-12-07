@@ -32,4 +32,5 @@ dependencies {
     implementation(libs.coreCompose)
     implementation(libs.financeTheme)
     implementation(libs.financeStatisticApi)
+    implementation(libs.financeProfileApi)
 }
