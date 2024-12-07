@@ -14,12 +14,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import finance.home.presentation.components.AlertExceptionDialogComponent
-import finance.home.presentation.components.FullScreenLoadingDialogComponent
 import finance.home.presentation.components.PaymentComponent
 import finance.home.presentation.components.PromoAndDiscountComponent
 import finance.home.presentation.components.ServiceComponent
 import finance.home.presentation.components.YourAccountComponent
+import vn.core.composex.uikit.alert.AlertExceptionDialogComponent
+import vn.core.composex.uikit.loading.FullScreenLoadingDialogComponent
 import vn.finance.home.presentation.R
 
 @Composable
