@@ -10,9 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import finance.home.presentation.PATH
-import finance.home.presentation.home.HomePage
-import vn.finance.statistic.api.StatisticApi
+import vn.finance.home.api.HomeApi
 import vn.finance.theme.AppTheme
 import javax.inject.Inject
 
@@ -20,7 +18,7 @@ import javax.inject.Inject
 class HomeActivity : ComponentActivity() {
 
     @Inject
-    lateinit var statisticApi: StatisticApi
+    lateinit var homeApi: HomeApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +33,9 @@ class HomeActivity : ComponentActivity() {
 
     @Composable
     fun HomeNavHost(navController: NavHostController) {
-        NavHost(navController = navController, startDestination = PATH) {
-            composable(PATH) {
-                HomePage(statisticPage = { statisticApi.StatisticPageWithoutScrollState() })
+        NavHost(navController = navController, startDestination = homeApi.path) {
+            composable(homeApi.path) {
+                homeApi.HomePage()
             }
         }
     }
