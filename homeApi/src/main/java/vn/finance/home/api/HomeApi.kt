@@ -7,5 +7,5 @@ interface HomeApi {
     val path: String
 
     @Composable
-    fun HomePage()
+    fun HomePage(onGotoSetting: () -> Unit)
 }

@@ -14,8 +14,11 @@ class HomeApiImpl(private val statisticApi: StatisticApi, private val profileApi
         get() = PATH
 
     @Composable
-    override fun HomePage() {
-        Page(statisticPage = { statisticApi.StatisticPageWithoutScrollState() },
-            profilePage = { profileApi.ProfileView(modifier = Modifier) })
+    override fun HomePage(onGotoSetting: () -> Unit) {
+        Page(
+            statisticPage = { statisticApi.StatisticPageWithoutScrollState() },
+            profilePage = { profileApi.ProfileView(modifier = Modifier) },
+            onGotoSetting = onGotoSetting
+        )
     }
 }

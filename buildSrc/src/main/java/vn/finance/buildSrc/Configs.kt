@@ -26,6 +26,6 @@ object Configs {
         const val ARTIFACT_PRESENTATION_ID = "feature-home-presentation"
         const val ARTIFACT_BUSINESS_ID = "feature-home-business"
         const val ARTIFACT_API_ID = "feature-home-api"
-        const val VERSION = "1.0.7"
+        const val VERSION = "1.0.8"
     }
 }
