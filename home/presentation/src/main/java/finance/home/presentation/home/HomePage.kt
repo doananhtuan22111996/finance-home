@@ -37,7 +37,11 @@ import vn.core.composex.uikit.appBar.NavElement
 import vn.finance.home.presentation.R
 
 @Composable
-fun HomePage(statisticPage: @Composable () -> Unit, profilePage: @Composable () -> Unit) {
+fun HomePage(
+    statisticPage: @Composable () -> Unit,
+    profilePage: @Composable () -> Unit,
+    onGotoSetting: () -> Unit
+) {
     val viewModel: HomeViewModel = hiltViewModel()
     val selected by viewModel.selected.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -46,9 +50,7 @@ fun HomePage(statisticPage: @Composable () -> Unit, profilePage: @Composable () 
     Container(
         appBarTitle = stringResource(R.string.home),
         actions = {
-            IconButton(onClick = {
-                toast.show()
-            }) {
+            IconButton(onClick = onGotoSetting) {
                 Icon(Icons.Outlined.Settings, contentDescription = stringResource(R.string.setting))
             }
         },
