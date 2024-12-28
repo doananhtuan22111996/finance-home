@@ -26,4 +26,7 @@ dependencies {
 
     implementation(libs.financeProfilePresentation)
     implementation(libs.financeProfileBusiness)
+
+    implementation(libs.financeNotificationPresentation)
+    implementation(libs.financeNotificationBusiness)
 }

@@ -39,6 +39,7 @@ import vn.finance.home.presentation.R
 @Composable
 fun HomePage(
     statisticPage: @Composable () -> Unit,
+    notificationPage: @Composable () -> Unit,
     profilePage: @Composable () -> Unit,
     onGotoSetting: () -> Unit
 ) {
@@ -118,24 +119,29 @@ fun HomePage(
             }
         },
     ) { innerPadding ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
                 .padding(horizontal = 16.dp)
-                .verticalScroll(rememberScrollState())
         ) {
             AnimatedVisibility(visible = selected == 0) {
-                DashboardView()
+                Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                    DashboardView()
+                }
             }
             AnimatedVisibility(visible = selected == 1) {
-                statisticPage()
+                Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                    statisticPage()
+                }
             }
             AnimatedVisibility(visible = selected == 2) {
-                Box(modifier = Modifier.fillMaxSize())
+                notificationPage()
             }
             AnimatedVisibility(visible = selected == 3) {
-                profilePage()
+                Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                    profilePage()
+                }
             }
         }
     }
