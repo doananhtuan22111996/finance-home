@@ -33,4 +33,5 @@ dependencies {
     implementation(libs.financeTheme)
     implementation(libs.financeStatisticApi)
     implementation(libs.financeProfileApi)
+    implementation(libs.financeNotificationApi)
 }

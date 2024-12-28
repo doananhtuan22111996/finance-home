@@ -2,12 +2,13 @@
 corePlugins = "1.0.1"
 coreDomain = "1.0.0"
 coreData = "1.0.0"
-coreCompose = "1.0.1"
+coreCompose = "1.0.2"
 
 financeTheme = "1.0.2"
 financeLaunch = "1.0.2"
 financeStatistic = "1.0.3"
 financeProfile = "1.0.1"
+financeNotification = "1.0.1"
 
 provideNetworking = "1.0.0"
 
@@ -29,4 +30,6 @@ financeProfilePresentation = { group = "vn.finance.libs", name = "feature-profil
 financeProfileBusiness = { group = "vn.finance.libs", name = "feature-profile-business", version.ref = "financeProfile" }
 financeProfileApi = { group = "vn.finance.libs", name = "feature-profile-api", version.ref = "financeProfile" }
 
-[plugins]
+financeNotificationPresentation = { group = "vn.finance.libs", name = "feature-notification-presentation", version.ref = "financeNotification" }
+financeNotificationBusiness = { group = "vn.finance.libs", name = "feature-notification-business", version.ref = "financeNotification" }
+financeNotificationApi = { group = "vn.finance.libs", name = "feature-notification-api", version.ref = "financeNotification" }

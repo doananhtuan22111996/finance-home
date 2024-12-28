@@ -1,5 +1,6 @@
 package finance.home.presentation.di
 
+import com.feature.api.NotificationApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +17,14 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideHomeApi(statisticApi: StatisticApi, profileApi: ProfileApi): HomeApi =
-        HomeApiImpl(statisticApi = statisticApi, profileApi = profileApi)
+    fun provideHomeApi(
+        statisticApi: StatisticApi,
+        profileApi: ProfileApi,
+        notificationApi: NotificationApi
+    ): HomeApi =
+        HomeApiImpl(
+            statisticApi = statisticApi,
+            profileApi = profileApi,
+            notificationApi = notificationApi
+        )
 }
