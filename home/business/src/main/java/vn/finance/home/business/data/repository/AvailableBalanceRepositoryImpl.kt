@@ -12,18 +12,10 @@ import vn.finance.home.business.domain.model.AvailableBalanceModel
 import vn.finance.home.business.domain.repository.AvailableBalanceRepository
 import javax.inject.Inject
 
-class AvailableBalanceRepositoryImpl @Inject constructor(@AnoRetrofitApiService private val apiService: DashboardApiService) :
-    AvailableBalanceRepository {
-    override fun getAvailableBalance(): Flow<ResultModel<AvailableBalanceModel>> {
-        return object : NetworkBoundService<AvailableBalanceRaw, AvailableBalanceModel>() {
-            override suspend fun onApi(): Response<ObjectResponse<AvailableBalanceRaw>> {
-                return apiService.availableBalance()
-            }
+class AvailableBalanceRepositoryImpl @Inject constructor(@AnoRetrofitApiService private val apiService: DashboardApiService) : AvailableBalanceRepository {
+    override fun getAvailableBalance(): Flow<ResultModel<AvailableBalanceModel>> = object : NetworkBoundService<AvailableBalanceRaw, AvailableBalanceModel>() {
+        override suspend fun onApi(): Response<ObjectResponse<AvailableBalanceRaw>> = apiService.availableBalance()
 
-            override suspend fun processResponse(request: ObjectResponse<AvailableBalanceRaw>?): ResultModel.Success<AvailableBalanceModel> {
-                return ResultModel.Success(data = request?.data?.raw2Model())
-            }
-
-        }.build()
-    }
+        override suspend fun processResponse(request: ObjectResponse<AvailableBalanceRaw>?): ResultModel.Success<AvailableBalanceModel> = ResultModel.Success(data = request?.data?.raw2Model())
+    }.build()
 }

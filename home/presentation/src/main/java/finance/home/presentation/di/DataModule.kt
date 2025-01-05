@@ -16,5 +16,3 @@ abstract class DataModule {
     @ViewModelScoped
     abstract fun bindsAvailableBalanceRepository(availableBalanceRepositoryImpl: AvailableBalanceRepositoryImpl): AvailableBalanceRepository
 }
-
-

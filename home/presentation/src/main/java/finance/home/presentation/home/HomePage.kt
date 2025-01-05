@@ -3,7 +3,6 @@ package finance.home.presentation.home
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -41,7 +40,7 @@ fun HomePage(
     statisticPage: @Composable () -> Unit,
     notificationPage: @Composable () -> Unit,
     profilePage: @Composable () -> Unit,
-    onGotoSetting: () -> Unit
+    onGotoSetting: () -> Unit,
 ) {
     val viewModel: HomeViewModel = hiltViewModel()
     val selected by viewModel.selected.collectAsStateWithLifecycle()
@@ -63,7 +62,7 @@ fun HomePage(
                             icon = {
                                 Icon(
                                     Icons.Outlined.Home,
-                                    contentDescription = stringResource(R.string.home)
+                                    contentDescription = stringResource(R.string.home),
                                 )
                             },
                             label = { Text(stringResource(R.string.home)) },
@@ -74,7 +73,7 @@ fun HomePage(
                             icon = {
                                 Icon(
                                     Icons.Outlined.BarChart,
-                                    contentDescription = stringResource(R.string.statistic)
+                                    contentDescription = stringResource(R.string.statistic),
                                 )
                             },
                             label = { Text(stringResource(R.string.statistic)) },
@@ -96,7 +95,7 @@ fun HomePage(
                             icon = {
                                 Icon(
                                     Icons.Outlined.Person,
-                                    contentDescription = stringResource(R.string.profile)
+                                    contentDescription = stringResource(R.string.profile),
                                 )
                             },
                             label = { Text(stringResource(R.string.profile)) },
@@ -110,11 +109,12 @@ fun HomePage(
         floatingActionButtonPosition = FabPosition.Center,
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { toast.show() }, modifier = Modifier.offset(y = 40.dp)
+                onClick = { toast.show() },
+                modifier = Modifier.offset(y = 40.dp),
             ) {
                 Icon(
                     imageVector = Icons.Filled.DocumentScanner,
-                    contentDescription = stringResource(R.string.scan_qr)
+                    contentDescription = stringResource(R.string.scan_qr),
                 )
             }
         },
@@ -123,7 +123,7 @@ fun HomePage(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = 16.dp),
         ) {
             AnimatedVisibility(visible = selected == 0) {
                 Box(modifier = Modifier.verticalScroll(rememberScrollState())) {

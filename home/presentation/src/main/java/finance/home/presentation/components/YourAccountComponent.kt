@@ -20,22 +20,22 @@ fun YourAccountComponent(name: String, money: Number) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Column {
             Text(
                 stringResource(R.string.hello, name),
-                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold)
+                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
             )
             Text(
                 stringResource(R.string.your_available_balance),
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelMedium,
             )
         }
         Text(
             money.formatToDollar(),
             style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-            textAlign = TextAlign.End
+            textAlign = TextAlign.End,
         )
     }
 }

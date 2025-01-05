@@ -33,11 +33,12 @@ fun ServiceComponent() {
             .clip(shape = RoundedCornerShape(12.dp))
             .background(MaterialTheme.colorScheme.surfaceContainer),
         horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
 
     ) {
         Column(
-            modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(Icons.AutoMirrored.Filled.CompareArrows, stringResource(R.string.transfer))
             Box(Modifier.height(8.dp))
@@ -47,10 +48,11 @@ fun ServiceComponent() {
             modifier = Modifier
                 .width(1.dp)
                 .height(30.dp)
-                .background(MaterialTheme.colorScheme.onSurface)
+                .background(MaterialTheme.colorScheme.onSurface),
         )
         Column(
-            modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(Icons.Filled.AddCard, stringResource(R.string.top_up))
             Box(Modifier.height(8.dp))
@@ -60,10 +62,11 @@ fun ServiceComponent() {
             modifier = Modifier
                 .width(1.dp)
                 .height(30.dp)
-                .background(MaterialTheme.colorScheme.onSurface)
+                .background(MaterialTheme.colorScheme.onSurface),
         )
         Column(
-            modifier = Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(Icons.Filled.History, stringResource(R.string.history))
             Box(Modifier.height(8.dp))
