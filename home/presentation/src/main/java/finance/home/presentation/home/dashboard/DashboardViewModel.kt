@@ -12,8 +12,7 @@ import vn.finance.home.business.domain.usecase.AvailableBalanceUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class DashboardViewModel @Inject constructor(private val availableBalanceUseCase: AvailableBalanceUseCase) :
-    ViewModel() {
+class DashboardViewModel @Inject constructor(private val availableBalanceUseCase: AvailableBalanceUseCase) : ViewModel() {
 
     private val _isLoading = MutableStateFlow(false)
     val isLoading = _isLoading.asStateFlow()

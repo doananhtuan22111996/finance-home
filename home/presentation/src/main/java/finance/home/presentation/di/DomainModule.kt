@@ -14,7 +14,5 @@ class DomainModule {
 
     @Provides
     @ViewModelScoped
-    fun providesAvailableBalanceUseCase(repository: AvailableBalanceRepository): AvailableBalanceUseCase =
-        AvailableBalanceUseCase(repository = repository)
-
+    fun providesAvailableBalanceUseCase(repository: AvailableBalanceRepository): AvailableBalanceUseCase = AvailableBalanceUseCase(repository = repository)
 }

@@ -20,11 +20,10 @@ class ApiModule {
     fun provideHomeApi(
         statisticApi: StatisticApi,
         profileApi: ProfileApi,
-        notificationApi: NotificationApi
-    ): HomeApi =
-        HomeApiImpl(
-            statisticApi = statisticApi,
-            profileApi = profileApi,
-            notificationApi = notificationApi
-        )
+        notificationApi: NotificationApi,
+    ): HomeApi = HomeApiImpl(
+        statisticApi = statisticApi,
+        profileApi = profileApi,
+        notificationApi = notificationApi,
+    )
 }

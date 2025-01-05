@@ -46,11 +46,11 @@ fun PaymentComponent(onPaymentClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 16.dp)
+            .padding(vertical = 16.dp),
     ) {
         Text(
             stringResource(R.string.payment_list),
-            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold)
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
         )
         Box(modifier = Modifier.height(16.dp))
         LazyVerticalGrid(
@@ -59,39 +59,43 @@ fun PaymentComponent(onPaymentClick: () -> Unit) {
             verticalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
                 .height(216.dp)
-                .wrapContentHeight()
+                .wrapContentHeight(),
         ) {
             itemsIndexed(
                 listOf(
                     PaymentItem(
-                        icon = Icons.Filled.Bolt, text = context.getString(R.string.electricity)
+                        icon = Icons.Filled.Bolt,
+                        text = context.getString(R.string.electricity),
                     ),
                     PaymentItem(
-                        icon = Icons.Filled.Wifi, text = context.getString(R.string.internet)
+                        icon = Icons.Filled.Wifi,
+                        text = context.getString(R.string.internet),
                     ),
                     PaymentItem(
                         icon = Icons.Filled.ConfirmationNumber,
-                        text = context.getString(R.string.voucher)
+                        text = context.getString(R.string.voucher),
                     ),
                     PaymentItem(
                         icon = Icons.Filled.MedicalServices,
-                        text = context.getString(R.string.assurance)
+                        text = context.getString(R.string.assurance),
                     ),
                     PaymentItem(
                         icon = Icons.Filled.ShoppingCart,
-                        text = context.getString(R.string.merchant)
+                        text = context.getString(R.string.merchant),
                     ),
                     PaymentItem(
                         icon = Icons.Filled.PhoneAndroid,
-                        text = context.getString(R.string.mobile_credit)
+                        text = context.getString(R.string.mobile_credit),
                     ),
                     PaymentItem(
-                        icon = Icons.Outlined.ContentPaste, text = context.getString(R.string.bill)
+                        icon = Icons.Outlined.ContentPaste,
+                        text = context.getString(R.string.bill),
                     ),
                     PaymentItem(
-                        icon = Icons.Filled.MoreHoriz, text = context.getString(R.string.more)
+                        icon = Icons.Filled.MoreHoriz,
+                        text = context.getString(R.string.more),
                     ),
-                )
+                ),
             ) { _, item ->
                 PaymentItemComponent(item.icon, item.text, onPaymentClick)
             }
@@ -103,16 +107,19 @@ fun PaymentComponent(onPaymentClick: () -> Unit) {
 private fun PaymentItemComponent(icon: ImageVector, text: String, onPaymentClick: () -> Unit) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.clickable { onPaymentClick() }) {
+        modifier = Modifier.clickable { onPaymentClick() },
+    ) {
         Box(
             modifier = Modifier
                 .width(56.dp)
                 .height(56.dp)
                 .clip(shape = RoundedCornerShape(16.dp))
-                .background(MaterialTheme.colorScheme.inverseOnSurface)
+                .background(MaterialTheme.colorScheme.inverseOnSurface),
         ) {
             Icon(
-                icon, text, modifier = Modifier.align(Alignment.Center)
+                icon,
+                text,
+                modifier = Modifier.align(Alignment.Center),
             )
         }
         Box(modifier = Modifier.height(8.dp))

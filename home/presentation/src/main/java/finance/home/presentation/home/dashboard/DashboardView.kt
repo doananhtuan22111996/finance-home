@@ -29,12 +29,15 @@ fun DashboardView() {
     val isLoading by viewModel.isLoading.collectAsStateWithLifecycle()
     val appException by viewModel.appException.collectAsStateWithLifecycle()
     val toast = Toast.makeText(
-        LocalContext.current, stringResource(R.string.coming_soon), Toast.LENGTH_SHORT
+        LocalContext.current,
+        stringResource(R.string.coming_soon),
+        Toast.LENGTH_SHORT,
     )
 
     Column(modifier = Modifier.fillMaxSize()) {
         YourAccountComponent(
-            name = data?.name ?: stringResource(R.string.finance), money = data?.money ?: 0
+            name = data?.name ?: stringResource(R.string.finance),
+            money = data?.money ?: 0,
         )
         Box(modifier = Modifier.padding(vertical = 24.dp)) {
             ServiceComponent()
@@ -48,8 +51,10 @@ fun DashboardView() {
         }
 
         if (appException != null) {
-            AlertExceptionDialogComponent(message = stringResource(R.string.failed_to_fetch_available_balance),
-                onDismissRequest = { viewModel.onAppExceptionDismiss() })
+            AlertExceptionDialogComponent(
+                message = stringResource(R.string.failed_to_fetch_available_balance),
+                onDismissRequest = { viewModel.onAppExceptionDismiss() },
+            )
         }
     }
 }

@@ -1,4 +1,20 @@
 
+<a name="1.0.9"></a>
+## [1.0.9](https://github.com/doananhtuan22111996/finance-home/compare/1.0.8...1.0.9) (2024-12-28)
+
+### Features
+
+* Integrate notification feature into home presentation and dependency management ([#10](https://github.com/doananhtuan22111996/finance-home/issues/10))
+
+
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/doananhtuan22111996/finance-home/compare/1.0.7...1.0.8) (2024-12-14)
+
+### Features
+
+* provide function onGotoSetting ([#9](https://github.com/doananhtuan22111996/finance-home/issues/9))
+
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2024-12-08)
 

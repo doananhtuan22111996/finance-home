@@ -20,7 +20,7 @@ fun PromoAndDiscountComponent() {
     Column {
         Text(
             stringResource(R.string.promo_and_discount),
-            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold)
+            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
         )
         LazyRow(modifier = Modifier.padding(vertical = 16.dp)) {
             items(items = listOf(1, 2, 3), itemContent = { item ->
@@ -28,19 +28,19 @@ fun PromoAndDiscountComponent() {
                     1 -> Image(
                         painterResource(R.drawable.promo_one),
                         stringResource(R.string.promo_one),
-                        modifier = Modifier.padding(horizontal = 8.dp)
+                        modifier = Modifier.padding(horizontal = 8.dp),
                     )
 
                     2 -> Image(
                         painterResource(R.drawable.promo_two),
                         stringResource(R.string.promo_two),
-                        modifier = Modifier.padding(horizontal = 8.dp)
+                        modifier = Modifier.padding(horizontal = 8.dp),
                     )
 
                     3 -> Image(
                         painterResource(R.drawable.promo_three),
                         stringResource(R.string.promo_three),
-                        modifier = Modifier.padding(horizontal = 8.dp)
+                        modifier = Modifier.padding(horizontal = 8.dp),
                     )
                 }
             })

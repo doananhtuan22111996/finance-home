@@ -12,9 +12,8 @@ import finance.home.presentation.home.HomePage as Page
 class HomeApiImpl(
     private val statisticApi: StatisticApi,
     private val profileApi: ProfileApi,
-    private val notificationApi: NotificationApi
-) :
-    HomeApi {
+    private val notificationApi: NotificationApi,
+) : HomeApi {
     override val path: String
         get() = PATH
 
@@ -24,7 +23,7 @@ class HomeApiImpl(
             statisticPage = { statisticApi.StatisticPageWithoutScrollState() },
             profilePage = { profileApi.ProfileView(modifier = Modifier) },
             notificationPage = { notificationApi.NotificationView() },
-            onGotoSetting = onGotoSetting
+            onGotoSetting = onGotoSetting,
         )
     }
 }
